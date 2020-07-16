@@ -29,14 +29,51 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 
+
+const productSchema = new mongoose.Schema({
+    title: String,
+    content: String,
+    cover: {
+        name: String,
+        originalName: String,
+        path:String,
+        urlSharp: String,
+        createAt: Date
+
+    },
+})
+
+const Product = mongoose.model("product", productSchema);
+
 //route 
 app.route('/acceuil')
 .get((req, res) =>{
-    res.render("acceuil")
+    Product.find((err,product) => {
+        if(!err) {
+            res.render("acceuil",{
+                produit: product
+            })
+        }else{
+            res.send(err)
+        }
+    })
+
 })
+
+
 .post((req, res) =>{
-    // res.render("acceuil")
-    // console.log();
+    const newProduct = new Product({
+        title: req.body.title,
+        content: req.body.content,
+        price: req.body.price,
+    });
+    newProduct.save(function(err){
+        if(!err){
+            res.send("save ok !!!")
+        }else{
+            res.send(err)
+        }
+    })
     
 })
 
