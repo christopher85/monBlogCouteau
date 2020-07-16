@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-decoration: none;
+  list-style: none;
+  font-size: 30px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+}
+/*# sourceMappingURL=style.css.map */
