@@ -59,8 +59,6 @@ app.route('/acceuil')
     })
 
 })
-
-
 .post((req, res) =>{
     const newProduct = new Product({
         title: req.body.title,
