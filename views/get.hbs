@@ -1,6 +1,6 @@
  
  <nav>
-    <ul>
+    <ul class="nav-bar">
         <li><a href="./get">GET</a></li>
         <li><a href="./post">POST</a></li>
         <li><a href="./put">PUT</a></li>
@@ -13,7 +13,11 @@
  <div class="row">
     <div class="col-md-4"></div>
         <div class="col-md-4">
-            <h1>GET</h1>
+            <div class="title">
+                <h1>Article</h1>
+                <button class="new"><a href="./post"><h6>Poster un nouvel article</h6></a></button>
+            
+            </div>
             <div class="card">
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
@@ -23,6 +27,11 @@
                             <p>Catégorie:{{this.category}}</p>
                             <p>Commentaire:{{this.content}}</p>
                             <!--<img src="{{this.title}}" alt="" style="max-width: 100px;">-->
+                            <button><a href="{{this.id}}">modifier</a></button>
+                            <form action="{{this.id}}/?_method=DELETE" method="POST">
+                                <button class="delete"><a href=""><i class="fas fa-trash-alt"></i></a></button>
+                            </form>
+                            
                         </li>
                         {{/each}}
                     </ul>

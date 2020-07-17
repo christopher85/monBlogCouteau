@@ -5,7 +5,18 @@
           box-sizing: border-box;
 }
 
-ul {
+nav {
+  background-color: black;
+  color: white;
+  width: 800px;
+  margin: auto;
+}
+
+nav li a {
+  color: #a3a3a3;
+}
+
+.nav-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,12 +27,64 @@ ul {
   font-size: 30px;
 }
 
-h1 {
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.title h1 {
   text-align: center;
   margin-top: 50px;
 }
 
-.list-group-item, button {
-  text-align: center;
+.title .new {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.list-group-item {
+  text-align: left;
+  background-color: rgba(128, 128, 128, 0.301);
+  position: relative;
+}
+
+.list-group-item h3 {
+  color: grey;
+}
+
+.list-group-item p {
+  color: rgba(128, 128, 128, 0.712);
+}
+
+.list-group-item button {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.list-group-item .delete {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: transparent;
+}
+
+.list-group-item .delete i {
+  color: red;
 }
 /*# sourceMappingURL=style.css.map */

@@ -66,7 +66,7 @@ app.route('/get')
                 product: product
                 })
             } else {
-                res.send(err)
+                res.send('err')
             }
         })
     })
@@ -88,9 +88,9 @@ app.route('/post')
         });
         newProduct.save(function (err) {
             if (!err) {
-                res.send("save ok !!!")
+                res.redirect("/get")
             } else {
-                res.send(err)
+                res.send('err')
             }
         })
 
@@ -98,9 +98,22 @@ app.route('/post')
 
 //MISE A JOUR
 
- app.route('/put')
+ app.route('/:id')
     .get((req, res) => {
-        res.render("put")
+        Product.findOne(
+            {_id: req.params.id},
+            function(err, product){
+                if(!err){
+                    res.render("put",{
+                        _id: product.id,
+                        title: product.title,
+                        content: product.content,
+                    })                    
+                }else{
+                    res.send('err1')
+                }
+            }   
+        )    
     })
     .put(function(req, res){
         Product.update(
@@ -110,15 +123,16 @@ app.route('/post')
             {
                 title: req.body.title,
                 content: req.body.content,
+                cover: req.body.cover,
             },
             //option
             {multi:true},
             //execute
             function(err){
                 if(!err){
-                    res.send("Update OK!!")
+                    res.redirect('/get')
                 }else{
-                    res.send(err)
+                    res.send('err')
                 }
             }
     
@@ -129,11 +143,6 @@ app.route('/post')
 
 //DELETE
 
-app.route('/delete')
-    .get((req, res) => {
-        res.render("delete")
-
-    })
     .delete(function(req,res){
         Product.deleteOne(
             {_id:req.params.id},
@@ -141,7 +150,7 @@ app.route('/delete')
                 if(!err){
                     res.send("product delete")
                 }else {
-                    res.send(err)
+                    res.send('err')
                 }
             }
         )
