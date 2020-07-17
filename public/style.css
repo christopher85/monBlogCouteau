@@ -97,6 +97,18 @@ nav li a {
   color: red;
 }
 
+/*delete
+=============*/
+.all-delete {
+  width: 50px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  color: red;
+  background: transparent;
+  font-size: 50px;
+}
+
 /*page post
 ===============*/
 #post h1 {

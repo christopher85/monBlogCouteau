@@ -142,6 +142,22 @@ app.route('/get')
         )
     })
 
+//delete all
+.delete((req,res) =>{
+    Product.deleteMany((err) =>{
+        if(!err){
+            res.redirect('/get')
+        }else{
+            res.send(err)
+        }
+    })
+})
+
+
+
+
+
+    
 //METHODE POST
 
 app.route('/post')
@@ -165,7 +181,7 @@ app.route('/post')
     })
     .post(upload.single("cover"),(req, res) => {
         const file = req.file;
-        console.log(file);
+        // console.log(file);
         
 
         const newProduct = new Product({
@@ -220,7 +236,10 @@ app.route('/post')
                 title: req.body.title,
                 content: req.body.content,
                 cover: req.body.cover,
+                
             },
+            
+            
             //option
             {multi:true},
             //execute
@@ -237,13 +256,15 @@ app.route('/post')
 
 
 
-//DELETE
+
+//DELETE un par un 
 
     .delete(function(req,res){
         Product.deleteOne(
             {_id:req.params.id},
             function(err){
                 if(!err){
+                    
                     res.redirect('/get')
                 }else {
                     res.send(err)
@@ -251,6 +272,12 @@ app.route('/post')
             }
         )
     })
+
+// const effacer = document.querySelector('.delete')
+
+// function attention(keyup){
+
+// }
 
 
 app.listen(1985, function () {
