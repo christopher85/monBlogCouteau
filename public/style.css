@@ -16,6 +16,8 @@ nav li a {
   color: #a3a3a3;
 }
 
+/*page d acceuil
+==============*/
 .nav-bar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -86,5 +88,19 @@ nav li a {
 
 .list-group-item .delete i {
   color: red;
+}
+
+/*page post
+===============*/
+#post h1 {
+  text-align: center;
+  margin: 50px 0;
+}
+
+/*page put
+==============*/
+#put h1 {
+  text-align: center;
+  margin-top: 50px 0;
 }
 /*# sourceMappingURL=style.css.map */

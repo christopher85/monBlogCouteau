@@ -148,7 +148,7 @@ app.route('/post')
             {_id:req.params.id},
             function(err){
                 if(!err){
-                    res.send("product delete")
+                    res.redirect('/get')
                 }else {
                     res.send('err')
                 }

@@ -3,8 +3,7 @@
     <ul class="nav-bar">
         <li><a href="./get">GET</a></li>
         <li><a href="./post">POST</a></li>
-        <li><a href="./put">PUT</a></li>
-        <li><a href="./delete">DELETE</a></li>
+       
     </ul>
 </nav>
 
@@ -29,7 +28,7 @@
                             <!--<img src="{{this.title}}" alt="" style="max-width: 100px;">-->
                             <button><a href="{{this.id}}">modifier</a></button>
                             <form action="{{this.id}}/?_method=DELETE" method="POST">
-                                <button class="delete"><a href=""><i class="fas fa-trash-alt"></i></a></button>
+                                <button class="delete" type="submit"><a href=""><i class="fas fa-trash-alt"></i></a></button>
                             </form>
                             
                         </li>
