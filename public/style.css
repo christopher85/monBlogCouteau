@@ -20,4 +20,8 @@ h1 {
   text-align: center;
   margin-top: 50px;
 }
+
+.list-group-item, button {
+  text-align: center;
+}
 /*# sourceMappingURL=style.css.map */

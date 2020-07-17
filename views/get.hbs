@@ -1,0 +1,33 @@
+ 
+ <nav>
+    <ul>
+        <li><a href="./get">GET</a></li>
+        <li><a href="./post">POST</a></li>
+        <li><a href="./put">PUT</a></li>
+        <li><a href="./delete">DELETE</a></li>
+    </ul>
+</nav>
+
+ 
+ 
+ <div class="row">
+    <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h1>GET</h1>
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        {{#each product}}
+                        <li class="list-group-item">
+                            <h3>titre:{{this.title}}</h3>
+                            <p>Catégorie:{{this.category}}</p>
+                            <p>Commentaire:{{this.content}}</p>
+                            <!--<img src="{{this.title}}" alt="" style="max-width: 100px;">-->
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+     <div class="col-md-4"></div>
+</div>
