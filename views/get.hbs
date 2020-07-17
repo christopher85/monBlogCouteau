@@ -2,7 +2,7 @@
  <nav>
     <ul class="nav-bar">
         <li><a href="./get">GET</a></li>
-        <li><a href="./post">POST</a></li>
+        <li><a href="#">POST</a></li>
        
     </ul>
 </nav>
@@ -22,10 +22,15 @@
                     <ul class="list-group list-group-flush">
                         {{#each product}}
                         <li class="list-group-item">
-                            <h3>titre:{{this.title}}</h3>
-                            <p>Catégorie:{{this.category}}</p>
-                            <p>Commentaire:{{this.content}}</p>
-                            <!--<img src="{{this.title}}" alt="" style="max-width: 100px;">-->
+
+                            <div><img src="{{this.cover.path}}" alt="" style="max-width: 120px;"></div>
+                            
+                            <div class="objet">
+                                <h3>titre:   {{this.title}}</h3>
+                                <p>Catégorie:   {{this.category.title}}</p>
+                                <p>Commentaire:   {{this.content}}</p>
+                            </div>
+
                             <button><a href="{{this.id}}">modifier</a></button>
                             <form action="{{this.id}}/?_method=DELETE" method="POST">
                                 <button class="delete" type="submit"><a href=""><i class="fas fa-trash-alt"></i></a></button>

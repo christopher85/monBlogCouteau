@@ -45,6 +45,10 @@ nav li a{
     text-align: left;
     background-color: rgba(128, 128, 128, 0.301);
     position: relative;
+    display: flex;
+    .objet{
+        margin-left: 20px;
+    }
     h3{
         color: grey;
     }
