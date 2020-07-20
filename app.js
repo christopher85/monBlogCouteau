@@ -9,6 +9,7 @@ const {
 } = require('@handlebars/allow-prototype-access');
 const methodOverride = require('method-override');
 const path = require('path');
+const { Router } = require('express');
 
 
 const storage = multer.diskStorage({
@@ -152,8 +153,16 @@ app.route('/get')
         }
     })
 })
+// afficher les articles par catégories
 
-
+// app.route('/category/:id')
+//     .get((req,res,err) => {
+//         if(!err){
+//             res.redirect('/boucher')
+//         }else{
+//             res.send(err)
+//         }
+//     })
 
 
 
@@ -227,7 +236,8 @@ app.route('/post')
             }   
         )    
     })
-    .put(function(req, res){
+    .put(upload.single("cover"),(req, res) => {
+        
         Product.update(
             //condition
             {_id: req.params.id},
@@ -235,11 +245,9 @@ app.route('/post')
             {
                 title: req.body.title,
                 content: req.body.content,
-                cover: req.body.cover,
-                
+                cover: req.body.cover,               
             },
-            
-            
+                
             //option
             {multi:true},
             //execute
@@ -273,11 +281,6 @@ app.route('/post')
         )
     })
 
-// const effacer = document.querySelector('.delete')
-
-// function attention(keyup){
-
-// }
 
 
 app.listen(1985, function () {

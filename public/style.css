@@ -6,6 +6,15 @@
 }
 
 nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   background-color: black;
   color: white;
   width: 800px;
@@ -19,14 +28,17 @@ nav li a {
 /*page d acceuil
 ==============*/
 .nav-bar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   text-decoration: none;
   list-style: none;
   font-size: 30px;
+}
+
+.nav-bar option {
+  font-size: 15px;
+}
+
+.nav-bar select {
+  font-size: 15px;
 }
 
 .title {

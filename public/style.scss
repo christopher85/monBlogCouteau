@@ -5,6 +5,9 @@
 }
 
 nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     background-color: black;
     color: white;
     width: 800px;
@@ -18,11 +21,15 @@ nav li a{
 ==============*/
 
 .nav-bar{
-    display: flex;
-    justify-content: space-around;
     text-decoration: none;
     list-style: none;
     font-size: 30px;
+    option{
+        font-size: 15px;
+    }
+    select{
+        font-size: 15px;
+    }
 }
 .title{
     display: flex;
