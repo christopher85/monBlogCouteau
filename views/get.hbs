@@ -5,12 +5,10 @@
     </ul>
     <ul class="nav-bar">
        <label for="">Catégories</label>
-        <select name="category" id="">
-            <option value="">Cuisine</option>
-            <option value=""><a href="">Boucher</a></option>
-            <option value="">Combat</option>
-            <option value="">Décoration</option>
-            <option value="">Défense</option>
+         <select name="category" id="exampleFormControlSelect1">
+            {{#each category}}
+            <option value="{{this.id}}">{{this.title}}</option>
+            {{/each}}
         </select>
     </ul>
 </nav>
@@ -52,7 +50,26 @@
             <form action="/get?_method=DELETE" method="POST">
                  <button class="all-delete" type="submit"><i class="fas fa-times-circle"></i></button>
             </form>
+
            
+
         </div>
-     <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="card-2">
+                <h1>Ajout des catégories</h1>
+            
+                <div class="card-body-2">
+
+                    <form method="POST" action="/category" >
+                        <div class="form-group">
+                            <label>catégorie</label>
+                            <input class="form-control" type="text" name="title" >
+                        </div>
+                       
+                        <button type="submit" class="btn btn-primary">Ajouter</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
 </div>

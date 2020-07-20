@@ -97,7 +97,25 @@ nav li a{
     color: red;
     background: transparent;
     font-size: 50px;
+    position: absolute;
+    right: 10px;
 }
+
+/*catégories
+=============*/
+
+.card-2{
+    width: 200px;
+    font-size: 15px;
+    position: absolute;
+    top: 200px;
+    left: 80px;
+    color: purple;
+    h1{
+        font-size: 20px;
+    }
+}
+
 
 /*page post
 ===============*/

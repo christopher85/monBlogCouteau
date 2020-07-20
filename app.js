@@ -113,7 +113,7 @@ app.route('/category')
         })
         newCategory.save(function(err){
             if(!err){
-                res.send("category save")
+                res.redirect('/get')
             }else{
                 res.send(err)
             }
@@ -214,9 +214,10 @@ app.route('/post')
                 res.send(err)
             }
         })
-
+        
+        console.log(newProduct.cover);
     })
-
+    
 //MISE A JOUR
 
  app.route('/:id')
@@ -229,6 +230,7 @@ app.route('/post')
                         _id: product.id,
                         title: product.title,
                         content: product.content,
+                        cover: product.cover
                     })                    
                 }else{
                     res.send(err)
@@ -236,18 +238,39 @@ app.route('/post')
             }   
         )    
     })
+
     .put(upload.single("cover"),(req, res) => {
+        const file = req.file;
+        // console.log(file);
         
-        Product.update(
+
+        const newPut = new Product({
+            title: req.body.title,
+            content: req.body.content,
+            cover: req.body.cover,
+        });
+        if(file){
+            newPut.cover = {
+                name: file.filename,
+                originalname: file.originalname,
+                path: file.path.replace("public", ""),
+                createAt: Date.now()
+            }
+        }
+    
+        
+        Product.updateOne(
             //condition
+            
             {_id: req.params.id},
+            
             //update
             {
                 title: req.body.title,
                 content: req.body.content,
-                cover: req.body.cover,               
+                cover: newPut.cover,
             },
-                
+            
             //option
             {multi:true},
             //execute
@@ -258,10 +281,11 @@ app.route('/post')
                     res.send(err)
                 }
             }
-    
-        )
-    })
-
+            
+            )
+            
+            console.log(newPut);
+})
 
 
 
