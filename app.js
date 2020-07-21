@@ -284,7 +284,7 @@ app.route('/post')
             
             )
             
-            console.log(newPut);
+            // console.log(newPut);
 })
 
 

@@ -36,10 +36,12 @@ nav li a {
 
 .nav-bar option {
   font-size: 15px;
+  border-radius: 10px;
 }
 
 .nav-bar select {
   font-size: 15px;
+  border-radius: 10px;
 }
 
 .title {
